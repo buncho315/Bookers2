@@ -1,0 +1,12 @@
+<h1>Users#index</h1>
+
+<% @users.each do |user| %>
+  <p>name:<%= user.name %></p>
+
+  <%= link_to "show", user_path(user.id) %>
+
+<% end %>
+
+<%= render 'user_info', user: current_user %>
+<%= render 'books/new_book', book: @new_book %>
+
