@@ -3,14 +3,14 @@
 <%= form_with model: @user, url: update_user_path(@user.id), method: :patch do |f| %>
   <h2>Name</h2>
   <%= f.text_field :name %>
-  <h2>Image</h2>
-
+  <p>Image</p>
+  <%= f.file_field :image, accept: "image/*" %>
   <h2>Introduction</h2>
   <%= f.text_area :introduction %>
 
-   <%= f.submit 'Update user' %>
+  <%= f.submit 'Update user' %>
 
 <% end %>
 
-
+<footer>CopyRight Infratop.inc</footer>
 

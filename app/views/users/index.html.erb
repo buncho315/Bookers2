@@ -1,12 +1,16 @@
-<h1>Users#index</h1>
+<h1>Users</h1>
 
-<% @users.each do |user| %>
-  <p>name:<%= user.name %></p>
+<table class="table table-striped">
 
-  <%= link_to "show", user_path(user.id) %>
+  <% @users.each do |user| %>
+  <tbody>
+    <tr>
+      <td>name:<%= user.name %></td>
+      <td><%= link_to "show", user_path(user.id) %></td>
+    </tr>
+  <% end %>
 
-<% end %>
-
-<%= render 'user_info', user: current_user %>
-<%= render 'books/new_book', book: @new_book %>
-
+  <%= render 'user_info', user: current_user %>
+  <%= render 'books/new_book', book: @new_book %>
+  </tbody>
+</table>
