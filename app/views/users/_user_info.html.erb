@@ -1,8 +1,13 @@
-<h1>User info</h1>
-<div class="container">
- <div class="row">
-    <table class="table table-striped">
-      <tbody>
+<div class='container mt-3'>
+  <div class='row'>
+      <div class='col-md-3'>
+        <%= render 'users/user_info', user: current_user %>
+        <%= render 'books/new_book', book: @new_book %>
+      </div>
+  <div class='col-md-8 offset-md-1'>
+    <h1>User info</h1>
+    <table class = "table table-hover table-inverse">
+      <thead>
         <tr>
           <p><%= image_tag user.get_profile_image(100,100) %></p>
           <th>name</th>
@@ -12,8 +17,13 @@
           <th>Introduction</th>
           <th><%= user.introduction %></th>
         </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td></td>
+        </tr>
       </tbody>
     </table>
   </div>
 </div>
-
