@@ -1,15 +1,19 @@
 <h1>User info</h1>
-<table class="table table-striped">
-  <tbody>
-    <tr>
-      <p><%= image_tag user.get_profile_image(100,100) %></p>
-      <th>name</th>
-      <th><%= user.name %></th>
-    </tr>
-    <tr>
-      <th>Introduction</th>
-      <th><%= user.introduction %></th>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+ <div class="row">
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <p><%= image_tag user.get_profile_image(100,100) %></p>
+          <th>name</th>
+          <th><%= user.name %></th>
+        </tr>
+        <tr>
+          <th>Introduction</th>
+          <th><%= user.introduction %></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
