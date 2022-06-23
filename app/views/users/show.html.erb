@@ -1,12 +1,35 @@
-<p id="notice"></p>
+<main>
+  <p id="notice"></p>
 
-<%= link_to 'User info', edit_user_path(@user.id)  %>
+  <div class='container mt-3'>
+    <div class='row'>
+       <div class='col-md-3'>
+         <%= render 'users/user_info', user: current_user %>
+         <%= render 'books/new_book', book: @new_book %>
+       </div>
 
-<% @user.books.each do |book| %>
- <h4>Title</h4>
-  <p>name:<%= book.title %></p>
-  <p>opinion:<%= book.body %></p>
-<% end %>
-
-<%= render 'users/user_info', user: @user %>
-<%= render 'books/new_book', book: @new_book %>
+       <div class='col-md-8 offset-md-1'>
+         <h1>Books</h1>
+         <table class="table table-hover table-inverse">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Title</th>
+              <th>Opinion</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+             <% @user.books.each do |book| %>
+             <tr>
+               <td>写真</td>
+               <td><%= book.title %></td>
+               <td><%= book.body %></td>
+             </tr>
+             <% end %>
+          </tbody>
+         </table>
+        </div>
+      </div>
+  </div>
+</main>
