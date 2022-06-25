@@ -12,9 +12,10 @@
          <td>
           <%= image_tag @user.get_profile_image(100, 100) %>
           <br>
-          <!--<%= link_to @user, user_path(@book.id) %> -->ここ修正
+          <!--<%= link_to @user, user_path(@book.id) %> -->15修正
+          <p><%= image_tag @user.get_profile_image(100,100) %></p>
          </td>
-         <td>git add .
+         <td>
          <%= link_to @book.title, book_path(@book.id) %>
          </td>
          <td>
