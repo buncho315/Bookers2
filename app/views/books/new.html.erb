@@ -1,8 +1,10 @@
 <h1>NEW book</h1>
-<%= form_with model: @user.title do |f| %>
+<%= form_with model: @book do |f| %>
 
 <h2>Title</h2>
 <p><%= @book.title %></p>
 
 <h2>Opinion</h2>
 <p><%= @book.body %></p>
+
+<% end %>
