@@ -1,5 +1,5 @@
 <main>
-  <p id="notice"></p>
+  <%= flash[:notice] %>
 
   <div class='container mt-3'>
     <div class='row'>
@@ -7,7 +7,6 @@
          <%= render 'users/user_info', user: @user %>
          <%= render 'books/new_book', book: @new_book %>
        </div>
-
        <div class='col-md-8 offset-md-1'>
          <h1>Books</h1>
          <table class="table table-hover table-inverse">
@@ -22,8 +21,11 @@
           <tbody>
              <% @user.books.each do |book| %>
              <tr>
-               <td><%= image_tag @user.get_profile_image(100,100) %></td>
-               <td><%= book.title %></td>
+               <td><%= link_to user_path(@user) do %>
+               <&= image_tag @user.get_profile_image(100,100) %>
+               <% end %>
+               </td>
+               <td><%= link_to book.title, book_path(book) %></td>
                <td><%= book.body %></td>
              </tr>
              <% end %>

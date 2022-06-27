@@ -1,14 +1,14 @@
 <h1>User info</h1>
 <table class = "table table-hover table-inverse">
+  <%= image_tag user.get_profile_image(100,100) %>
   <tbody>
     <tr>
-      <td><%= image_tag user.get_profile_image(100,100) %></td>
-      <td>name</td>
-      <td><%= user.name %></td>
+      <th>name</th>
+      <th><%= user.name %></th>
     </tr>
     <tr>
-      <td>Introduction</td>
-      <td><%= user.introduction %></td>
+      <th>Introduction</th>
+      <th><%= user.introduction %></th>
     </tr>
   </tbody>
 </table>
